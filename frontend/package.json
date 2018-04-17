@@ -14,5 +14,9 @@
     "Web"
   ],
   "author": "Khumoyun Inoyatov, Komron Botirov, Hokim Mamarasulov, Khusan Yusufkhodjaev",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "webpack": "^4.6.0"
+  }
 }
