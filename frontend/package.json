@@ -1,0 +1,18 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "It is a IP Design project frontend client for Hotel Booking Service (HBS) created with ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "Hotel",
+    "Booking",
+    "JS",
+    "Web"
+  ],
+  "author": "Khumoyun Inoyatov, Komron Botirov, Hokim Mamarasulov, Khusan Yusufkhodjaev",
+  "license": "MIT"
+}
