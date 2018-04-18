@@ -16,6 +16,10 @@
   "author": "Khumoyun Inoyatov, Komron Botirov, Hokim Mamarasulov, Khusan Yusufkhodjaev",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",
     "webpack": "^4.6.0"
   }
