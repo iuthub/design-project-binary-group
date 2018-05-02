@@ -30,8 +30,8 @@ class HotelController extends Controller{
         }
 
         public function create(Request $request) {
-                $hotel = Hotel::create($request->all());
-
+                $hotel = new Hotel($request->all());
+                $hotel->save();
                 return response()->json(['data' => $hotel]);
         }
 }
