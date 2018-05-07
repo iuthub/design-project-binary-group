@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 class UserController extends Controller
 {
@@ -11,8 +12,14 @@ class UserController extends Controller
         $user = new User($request->all());
         $check = User::where('mail', $user['mail'])->first();
         if (empty($check)) {
-            $user->save();
-            return response()->json(['result' => true, 'data' => $user]);
+            if(filter_var($user['mail'], FILTER_VALIDATE_EMAIL)) {
+                // valid address
+                $user->save();
+                return response()->json(['result' => true, 'data' => $user]);
+            } else {
+                // invalid address
+                return response()->json(['result' => false, 'data' => 'Email not valid']);
+            }
         } else {
             return response()->json(['result' => false, 'data' => 'This email alrady exist']);
         }
