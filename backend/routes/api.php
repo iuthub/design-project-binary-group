@@ -15,6 +15,10 @@ use Illuminate\Http\Request;
 /////Users
 Route::post('users/register', 'UserController@create');
 Route::post('users/authorization', 'UserController@authorization');
+Route::get('users', 'UserController@getAll');
+Route::get('users/{id}', 'UserController@getById');
+Route::post('users/{id}', 'UserController@updateById');
+Route::delete('users/{id}', 'UserController@removeById');
 /////Hotels
 Route::get('hotels', 'HotelController@getAll');
 Route::get('hotels/{id}', 'HotelController@getById');
