@@ -1,12 +1,22 @@
 import React from 'react';
-import ReactDOM from React;
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log("created !");
+    }
     render() {
-        return {
-
-        }
+        return  (
+            <MuiThemeProvider>
+                <div>
+                    <AppBar title={'something'}/>
+                </div>
+            </MuiThemeProvider>
+        );
     }
 }
 
-export App default
+export default App;
+
