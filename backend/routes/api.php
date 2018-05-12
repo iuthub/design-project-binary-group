@@ -19,6 +19,11 @@ Route::get('users', 'UserController@getAll');
 Route::get('users/{id}', 'UserController@getById');
 Route::post('users/{id}', 'UserController@updateById');
 Route::delete('users/{id}', 'UserController@removeById');
+/////Comments
+Route::get('hotels/comment/{id}', 'CommentsController@getAll');
+Route::post('hotels/comment', 'CommentsController@create');
+Route::post('hotels/comment/update/{id}', 'CommentsController@updateComment');
+Route::post('hotels/comment/remove/{id}', 'CommentsController@removeComment');
 /////Hotels
 Route::get('hotels', 'HotelController@getAll');
 Route::get('hotels/{id}', 'HotelController@getById');

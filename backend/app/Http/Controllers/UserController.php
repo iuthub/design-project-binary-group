@@ -33,7 +33,7 @@ class UserController extends Controller
             return response()->json(['result' => true, 'data' => $user]);
         }
     }
-
+    
     public function getAll() {
         return response()->json(['data' => User::all(),]);
     }
