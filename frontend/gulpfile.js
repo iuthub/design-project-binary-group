@@ -24,7 +24,7 @@ gulp.task('compile', function () {
                   use: {
                     loader: 'babel-loader',
                     options: {
-                      presets: ['react', 'es2015']
+                      presets: ['react', 'es2015', 'es2016']
                     }
                   }
                 }
@@ -32,63 +32,6 @@ gulp.task('compile', function () {
             }
         }
 
-        //         output   : {
-        //                 filename: "app.js"
-        //         },
-        //         module   : {
-        //                 loaders: [
-        //                         {
-        //                                 loader: "babel-loader",
-        //                                 test: /\.jsx?$/, exclude: /node_modules/,
-        //                                 query : {
-        //                                         presets: [ 'react', 'es2015' ]
-        //                                 }
-        //                         }
-        //                 ]
-        //         },
-        //         plugins  : [
-        //                 new webpack.DefinePlugin({
-        //                         'process.env': {
-        //                                 'NODE_ENV'  : JSON.stringify('development'),
-        //                                 'USE_REMOTE': JSON.stringify(process.env.USE_REMOTE),
-        //                                 'RELEASE_VERSION': JSON.stringify(process.env.RELEASE_VERSION)
-        //                         }
-        //                 })
-        //         ],
-        //         externals: [
-        //                 {
-        //                         'xlsx'  : 'XLSX',
-        //                         'nw.gui': "require('nw.gui')"
-        //                 }
-        //         ],
-        //         devtool  : "eval",
-        //         watch    : true
-        // };
-        
-        // if (isProduction) {
-        //         webpack_config.plugins = [
-        //                 new webpack.DefinePlugin({
-        //                         'process.env': {
-        //                                 'NODE_ENV'  : JSON.stringify('production'),
-        //                                 'USE_REMOTE': JSON.stringify('true'),
-        //                                 'RELEASE_VERSION': JSON.stringify(process.env.RELEASE_VERSION)
-                                        
-        //                         }
-        //                 }),
-        //                 new webpack.optimize.UglifyJsPlugin({
-        //                         compress: {
-        //                                 warnings: true
-        //                         }
-        //                 })
-        //         ];
-        //         delete webpack_config.devtool;
-        //         webpack_config.watch = false;
-                
-        //         console.log("PRODUCTION enabled")
-        // } else {
-        //         console.log("PRODUCTION disabled")
-        // }
-        
         return gulp.src('app/index.js')
                    .pipe(webpack_stream(webpack_config, webpack))
                    .pipe(gulp.dest('dist/js/'));
