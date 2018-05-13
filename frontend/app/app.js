@@ -11,6 +11,8 @@ import SubHeader from 'material-ui/Subheader';
 import {NavigationMenu,ActionHome, ActionClass,ImageNaturePeople,FileFileUpload,ActionAccountBalanceWallet,ActionSpellcheck ,ActionHistory, ActionPrint,ActionInfo, ActionAccountCircle} from 'material-ui/svg-icons';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 
+import Main from './components/Main';
+
 const CONTROLLERS = {
     MAIN    : 'main',
     INFO    : 'info',
@@ -175,14 +177,51 @@ class App extends Component {
       )
   }
 
+    getController() {
 
+        const controller = this.state.controller;
+        let content;
+        switch (controller) {
+            case CONTROLLERS.MAIN:
+                content = <Main/>;
+                break;
+            case CONTROLLERS.INFO:
+                content = <InfoPage />;
+                break;
+            case CONTROLLERS.EDITOR:
+                content = <TextEditor/>;
+                break;
+            case CONTROLLERS.BALANCE:
+                content = <BalancePage/>;
+
+                break;
+            case CONTROLLERS.HISTORY:
+                content = <HistoryPage/>;
+                break;
+            case CONTROLLERS.LOGIN:
+                content = <LoginPage/>;
+                break;
+            case CONTROLLERS.ABOUT:
+                content = <AboutPage/>;
+                break;
+            case CONTROLLERS.UPLOAD:
+                content = <UploadPage/>;
+                break;
+            default:
+                content = <div></div>;
+
+                break;
+        }
+        return <div>{content}</div>
+    }
   render() {
-    return (
+        return (
         <MuiThemeProvider>
             <div>
                 {this.getDrawer()}
                 <div>
                     {this.getAppBar()}
+                    {this.getController()}
                 </div>
             </div>
         </MuiThemeProvider>
